@@ -8,12 +8,12 @@ export default function Product( { item, addToBasket } ) {
 
   function addHandler(e) {
     console.log('Add product to basket ', product.name, product.quantity);
-    const clone = Object.create(product);
+    const clone = { ...product };
     addToBasket(clone);
   }
 
   function quantityChangeHandler(e) {
-    const clone = Object.create(product);
+    const clone = { ...product };
     clone.quantity = parseInt(e.target.value, 10);
     console.log('Quantity changed ' + clone.quantity);
     setProduct(clone);
