@@ -7,14 +7,12 @@ export default function Basket({ basket }) {
   const [totalPrice, setTotalPrice] = useState( 0 );
 
   useEffect(() => {
-    console.log('Basket useEffect basket changed', basket.length);
     // Calculate price of basket
-    let t = 0;
+    let basketTotal = 0;
     basket.forEach((item) => {
-      t += item.price * item.quantity;
+      basketTotal += item.price * item.quantity;
     });
-    console.log('total price ', t);
-    setTotalPrice(t);
+    setTotalPrice(basketTotal);
   }, [basket])
 
   return (
