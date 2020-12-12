@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { formatCurrency } from './utils';
 
 export default function Product( { item, addToBasket } ) {
   
@@ -20,7 +21,7 @@ export default function Product( { item, addToBasket } ) {
   
   return (
     <div>
-      <p>{product.name} - {product.price}</p>
+      <p>{product.name} - {formatCurrency(product.price)}</p>
       <input type="number" min="1" max="100" value={product.quantity} onChange={quantityChangeHandler}></input>
       <button onClick={addHandler}>Add to Basket</button>
     </div>

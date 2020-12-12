@@ -35,7 +35,7 @@ function App() {
 
 
   useEffect(() => {
-    console.log('useEffect basket changed', basket);
+    console.log('useEffect basket changed', basket.length);
   }, [basket])
 
   return (

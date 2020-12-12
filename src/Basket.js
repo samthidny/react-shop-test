@@ -1,5 +1,5 @@
-import React from 'react'
-import BasketItem from './BasketItem'
+import React from 'react';
+import BasketItem from './BasketItem';
 
 export default function Basket({ basket }) {
   return (
