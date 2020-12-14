@@ -9,4 +9,8 @@ const formatCurrency = (n) => {
   return GBPFormatter.format(n / 100);
 }
 
-export { formatCurrency };
+const renderTime = () => {
+  return new Date().getTime();
+}
+
+export { formatCurrency, renderTime };

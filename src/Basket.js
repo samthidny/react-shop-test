@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BasketItem from './BasketItem';
-import { formatCurrency } from './utils';
+import { formatCurrency, renderTime } from './utils';
 
 export default function Basket({ basket }) {
 
@@ -17,7 +17,7 @@ export default function Basket({ basket }) {
 
   return (
     <div>
-      <h2>Your Basket - {formatCurrency(totalPrice)}</h2>
+      <h2>{renderTime()} - Your Basket - {formatCurrency(totalPrice)}</h2>
       {basket.map(item => {
         return <BasketItem key={item.id} item={item} />
       })}
