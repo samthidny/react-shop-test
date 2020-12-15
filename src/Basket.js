@@ -26,11 +26,15 @@ export default function Basket({ basket, onBasketUpdate }) {
     onBasketUpdate(clone);
   }
 
+  function itemRemoveHandler(item) {
+    console.log(`Basket - Remove ${item.name} from basket`);
+  }
+
   return (
     <div>
       <h2>Your Basket - {formatCurrency(totalPrice)}</h2>
       {basket.map(item => {
-        return <BasketItem key={item.id} item={item} onQuantityUpdate={quantityUpdateHandler}/>
+        return <BasketItem key={item.id} item={item} onQuantityUpdate={quantityUpdateHandler} onItemRemove={itemRemoveHandler}/>
       })}
     </div>
   )
