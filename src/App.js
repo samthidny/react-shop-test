@@ -1,7 +1,6 @@
 import Basket from './Basket';
 import Products from './Products';
 import React, { useState, useEffect } from 'react';
-import { renderTime } from './utils';
 
 function App() {
   
@@ -42,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>{renderTime()} - App</h2>
+      <h2>App</h2>
       <Products products={state.products} addToBasket={addToBasketHandler} />
       <Basket basket={state.basket} />
     </div>
