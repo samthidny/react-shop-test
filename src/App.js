@@ -39,11 +39,15 @@ function App() {
     }   
   };
 
+  function basketUpdateHandler(basket) {
+    setState({products, basket});
+  }
+
   return (
     <div className="App">
       <h2>App</h2>
       <Products products={state.products} addToBasket={addToBasketHandler} />
-      <Basket basket={state.basket} />
+      <Basket basket={state.basket} onBasketUpdate={basketUpdateHandler} />
     </div>
   );
 }
