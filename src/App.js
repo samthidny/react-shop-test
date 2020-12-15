@@ -1,6 +1,6 @@
 import Basket from './Basket';
 import Products from './Products';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function App() {
   
@@ -9,7 +9,6 @@ function App() {
   const [basket, setBasket] = useState([]);
   // const [totalPrice, setTotalPrice] = useState(0);
   const [state, setState] = useState({products, basket: []});
-
 
   function addToBasketHandler(product) {
     console.log('App - Add to basket ', product.name, product.quantity);
@@ -32,8 +31,6 @@ function App() {
     } else {
       // Add item to array
       console.log('adding product to basket', product);
-      // setBasket([...basket, product]);
-      //state.basket = [...basket, product];
       setState({ products: state.products, basket: [...state.basket, product] });
 
     }   
