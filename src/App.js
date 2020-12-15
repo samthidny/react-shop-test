@@ -6,7 +6,7 @@ function App() {
   
   const quantity = 1;
   const products = [ {id: 0, name: 'Apples', price: 30, quantity}, {id: 1, name: 'Bananas', price: 40, quantity}, {id: 2, name: 'Pears', price: 55, quantity}];
-  const [basket, setBasket] = useState([]);
+  //const [basket, setBasket] = useState([]);
   // const [totalPrice, setTotalPrice] = useState(0);
   const [state, setState] = useState({products, basket: []});
 
@@ -19,14 +19,14 @@ function App() {
     })
 
     if(existingItem) {
-      const adjustedArray = [...state.basket];
-      const basketItem = adjustedArray.find(item => {
+      const adjustedBasket = [...state.basket];
+      const basketItem = adjustedBasket.find(item => {
         return item.id === existingItem.id
       });
-      
       basketItem.quantity += product.quantity;
-      console.log('increase quantity of ' + basketItem.name + ' from ' + basketItem.quantity + ' + ' + product.quantity, adjustedArray);
-      setBasket(adjustedArray);
+      console.log('increase quantity of ' + basketItem.name + ' from ' + basketItem.quantity + ' + ' + product.quantity, adjustedBasket);
+      //setBasket(adjustedArray);
+      setState({ products: state.products, basket: adjustedBasket });
       
     } else {
       // Add item to array

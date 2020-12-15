@@ -14,14 +14,14 @@ export default function BasketItem( {item, onQuantityUpdate, onItemRemove } ) {
   function removeHandler() {
     // console.log(`Remove ${item.name}`);
     onItemRemove(item);
-    
+
   }
 
 
   return (
     <div>
       <p>Basket Item {item.name} -  {formatCurrency(item.price)} x {item.quantity} = {formatCurrency(item.price * item.quantity)}</p>
-      <input type="number" min="1" value={item.quantity} onChange={changeQuantityHandler}/>
+      <input type="number" min="1" max="100" value={item.quantity} onChange={changeQuantityHandler}/>
       <button onClick={removeHandler}>Remove</button>
     </div>
   )

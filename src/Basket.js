@@ -28,6 +28,12 @@ export default function Basket({ basket, onBasketUpdate }) {
 
   function itemRemoveHandler(item) {
     console.log(`Basket - Remove ${item.name} from basket`);
+    const clone = [...basket].filter((basketItem) => {
+      return basketItem.id !== item.id;
+    });
+
+    onBasketUpdate(clone);
+    
   }
 
   return (
