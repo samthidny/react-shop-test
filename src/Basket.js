@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BasketItem from './BasketItem';
 import { formatCurrency } from './utils';
+import styles from './Basket.module.css';
 
 export default function Basket({ basket, onBasketUpdate }) {
 
@@ -37,7 +38,7 @@ export default function Basket({ basket, onBasketUpdate }) {
   }
 
   return (
-    <div>
+    <div className={styles.blue}>
       <h2>Your Basket - {formatCurrency(totalPrice)}</h2>
       {basket.map(item => {
         return <BasketItem key={item.id} item={item} onQuantityUpdate={quantityUpdateHandler} onItemRemove={itemRemoveHandler}/>
